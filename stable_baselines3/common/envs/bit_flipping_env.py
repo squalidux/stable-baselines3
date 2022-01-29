@@ -189,7 +189,7 @@ class BitFlippingEnv(GoalEnv):
 
         desired_goal = self.convert_to_bit_vector(desired_goal, batch_size)
         achieved_goal = self.convert_to_bit_vector(achieved_goal, batch_size)
-
+        print(desired_goal, achieved_goal)
         # Deceptive reward: it is positive only when the goal is achieved
         # Here we are using a vectorized version
         distance = np.linalg.norm(achieved_goal - desired_goal, axis=-1)
